@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/weather_info/index.css' %}">
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mb-4">Weather App</h1>
+        <form method="POST" class="mb-4">
+            {% csrf_token %}
+            <input type="text" name="city" class="form-control w-50 mx-auto" placeholder="Enter city name" required>
+            <button type="submit" class="btn btn-custom mt-3">Get Weather</button>
+        </form>
+        <div class="weather-card w-50 mx-auto text-center">
+            <div class="glowing-effect"></div>
+            <h2>{{ city }}</h2>
+            <img src="https://openweathermap.org/img/wn/{{ icon|default:'01d' }}@2x.png" alt="Weather Icon" onerror="this.onerror=null; this.src='https://via.placeholder.com/100?text=No+Image';">
+            <h3>Temperature: {{ temp|default:"N/A" }}°C</h3>
+            <p>Climate: {{ description|default:"No description available" | title }}</p>
+            <small>Date: {{ date }}</small>
+        </div>
+    </div>
+</body>
+</html>

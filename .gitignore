@@ -1,0 +1,46 @@
+# Python bytecode files
+*.py[cod]
+
+# Django specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+/static/
+*.sqlite3
+
+# Environment files
+.env
+*.env
+venv/
+env/
+ENV/
+.venv/
+
+# Django migrations
+*/migrations/*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# Docker files
+*.dockerfile
+docker-compose.override.yml
+
+# Node.js dependencies (if using npm or yarn)
+node_modules/
+
+# AWS
+.aws-sdk/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Other common exclusions
+*.bak
+*.tmp
